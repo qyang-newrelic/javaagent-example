@@ -1,24 +1,12 @@
-package com.lzy.javaagent;
+package com.qyang.javaagent;
 
 
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.ClassVisitor;
-import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
 
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;
 import java.lang.instrument.Instrumentation;
 import java.security.ProtectionDomain;
 
-/**
- * Description:
- *
- * @author liuzhengyang
- * @version 1.0
- * @since 2017-03-15
- */
 public class AgentMain {
 	public static void premain(String agentOps, Instrumentation inst) {
 		instrument(agentOps, inst);
@@ -29,6 +17,10 @@ public class AgentMain {
 	}
 
 	private static void instrument(String agentOps, Instrumentation inst) {
+		System.out.println(agentOps);
+  }
+/*
+	private static void instrumentOld(String agentOps, Instrumentation inst) {
 		System.out.println(agentOps);
 		inst.addTransformer(new ClassFileTransformer() {
 			public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
@@ -46,7 +38,6 @@ public class AgentMain {
 		byte[] bytes = classWriter.toByteArray();
 		return bytes;
 	}
-
 	static class MyClassClassVisitor extends ClassVisitor {
 		public MyClassClassVisitor(ClassVisitor cv) {
 			super(Opcodes.ASM5, cv);
@@ -72,5 +63,6 @@ public class AgentMain {
 
 		}
 	}
+  */
 }
 

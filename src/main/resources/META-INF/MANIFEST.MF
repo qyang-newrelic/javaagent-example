@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Premain-Class: com.lzy.javaagent.AgentMain
-Agent-Class: com.lzy.javaagent.AgentMain
+Premain-Class: com.qyang.javaagent.AgentMain
+Agent-Class: com.qyang.javaagent.AgentMain
 Can-Redefine-Classes: true
